@@ -17,6 +17,16 @@ title: Templates
 
 如果你在给Nunjucks开发工具或是编辑器上的语法插件时，请记得使用`.njk`扩展名。
 
+## 语法高亮
+
+Plugins are available in various editors to support the `jinja` syntax highlighting of Nunjucks.
+在很多编辑器里都有合适的插件支持Nunjucks的'jinja'语法高亮
+
+* atom <https://github.com/alohaas/language-nunjucks>
+* vim <https://github.com/niftylettuce/vim-jinja>
+* brackets <https://github.com/axelboc/nunjucks-brackets>
+* sublime <https://github.com/mogga/sublime-nunjucks/blob/master/Nunjucks.tmLanguage>
+
 ## 变量
 
 变量会从模板上下文获取，如果你想显示一个变量可以：
@@ -47,7 +57,7 @@ foo.bar }}`, `{{ foo.bar.baz }}` 也不显示)。
 
 第三个例子展示了链式过滤器，最终会显示 "Bar"，第一个过滤器将 "foo" 替换成 "bar"，第二个过滤器将首字母大写。
 
-Nunjucks 提供了一些[内置的过滤器](#内置的过滤器)，你也可以[自定义过滤器](api#custom-filters)。
+Nunjucks 提供了一些[内置的过滤器](#builtin-filters)，你也可以[自定义过滤器](api#custom-filters)。
 
 ## 模板继承
 
@@ -151,7 +161,7 @@ Right side!
 {% endif %}
 ```
 
-在[内联表达式](#if-表达式)(inline expression)中也可以使用 if。
+在[内联表达式](#if-expression)(inline expression)中也可以使用 if。
 
 ### for
 
@@ -278,7 +288,7 @@ var env = new nunjucks.Environment(AsyncLoaderFromDatabase, opts);
 {{ field('pass', type='password') }}
 ```
 
-支持[关键字参数](#关键字参数)，通过链接查看具体使用方式。
+支持[关键字参数](#keyword-arguments)，通过链接查看具体使用方式。
 
 还可以从其他模板 [import](#import) 宏，可以使宏在整个项目中复用。
 
